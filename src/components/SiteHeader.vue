@@ -360,6 +360,7 @@ onBeforeUnmount(() => {
 
 .nav-node {
   cursor: pointer;
+  pointer-events: all;
 }
 
 /* Декоративная звезда — без hover-эффекта */
@@ -368,14 +369,11 @@ onBeforeUnmount(() => {
 }
 
 .nav-hitbox {
-  transition: fill 0.2s ease, stroke 0.2s ease;
-  stroke: transparent;
-  stroke-width: 1.5;
+  fill: transparent;
 }
 
 .nav-node:hover .nav-hitbox {
-  fill: rgba(0, 212, 255, 0.12);
-  stroke: rgba(98, 239, 255, 0.72);
+  fill: rgba(0, 212, 255, 0.16);
 }
 
 .nav-label {
@@ -383,14 +381,13 @@ onBeforeUnmount(() => {
   font-family: "Montserrat", Arial, sans-serif;
   font-size: 14px;
   font-weight: 700;
-  pointer-events: none;
+  pointer-events: all;
+  cursor: pointer;
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
-  transition: fill 0.2s ease, filter 0.2s ease;
 }
 
 .nav-node:hover .nav-label {
   fill: #62efff;
-  filter: drop-shadow(0 0 6px rgba(98, 239, 255, 0.75));
 }
 
 .close-btn {
