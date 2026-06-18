@@ -283,13 +283,13 @@ onBeforeUnmount(() => {
   font-family: "Montserrat", Arial, sans-serif;
   font-size: 14px;
   font-weight: 700;
-  transition: all 0.3s ease;
+  transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .constellation-btn:hover {
   background: rgba(255, 255, 255, 0.12);
   border-color: rgba(255, 159, 67, 0.5);
-  transform: translateY(-2px);
+  box-shadow: 0 0 22px rgba(255, 159, 67, 0.16);
 }
 
 .constellation-btn.active {
@@ -360,11 +360,6 @@ onBeforeUnmount(() => {
 
 .nav-node {
   cursor: pointer;
-  transition: transform 0.3s ease;
-}
-
-.nav-node:hover {
-  transform: scale(1.1);
 }
 
 /* Декоративная звезда — без hover-эффекта */
@@ -372,16 +367,15 @@ onBeforeUnmount(() => {
   cursor: default;
 }
 
-.nav-node.decorative:hover {
-  transform: none;
-}
-
 .nav-hitbox {
-  transition: fill 0.3s ease;
+  transition: fill 0.2s ease, stroke 0.2s ease;
+  stroke: transparent;
+  stroke-width: 1.5;
 }
 
 .nav-node:hover .nav-hitbox {
-  fill: rgba(255, 255, 255, 0.1);
+  fill: rgba(0, 212, 255, 0.12);
+  stroke: rgba(98, 239, 255, 0.72);
 }
 
 .nav-label {
@@ -391,6 +385,12 @@ onBeforeUnmount(() => {
   font-weight: 700;
   pointer-events: none;
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+  transition: fill 0.2s ease, filter 0.2s ease;
+}
+
+.nav-node:hover .nav-label {
+  fill: #62efff;
+  filter: drop-shadow(0 0 6px rgba(98, 239, 255, 0.75));
 }
 
 .close-btn {
