@@ -1,3 +1,5 @@
 node_modules/
 dist/
-.DS_Storebranches-files.txt
+.DS_Store
+branches-files.txt
+.incoming/

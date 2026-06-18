@@ -1,22 +1,29 @@
+<template>
+  <div class="app-shell">
+    <SiteHeader />
+    <main class="app-shell__content">
+      <RouterView />
+    </main>
+    <SiteFooter />
+    <SupportChat />
+  </div>
+</template>
+
 <script setup>
 import SiteHeader from './components/SiteHeader.vue'
-import HomePage from './pages/HomePage.vue'
-import AboutPage from './pages/AboutPage.vue'
-import ProductsPage from './components/ProductPage.vue'
-import ProjectsPage from './pages/ProjectsPage.vue'
 import SiteFooter from './components/SiteFooter.vue'
+import SupportChat from './components/SupportChat.vue'
 </script>
 
-<template>
-  <SiteHeader />
+<style>
+.app-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
 
-  <HomePage />
-
-  <AboutPage />
-
-  <ProductsPage />
-
-  <ProjectsPage />
-
-  <SiteFooter />
-</template>
+.app-shell__content {
+  flex: 1;
+  min-width: 0;
+}
+</style>
